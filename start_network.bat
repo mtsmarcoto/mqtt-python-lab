@@ -21,11 +21,11 @@ docker start mqtt-broker
 echo Opening broker logs...
 start "Mosquitto Logs" /D "%CD%" powershell.exe -NoExit -Command "docker logs -f mqtt-broker"
 
-echo Opening subscriber terminal...
-start "Subscriber" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command ".\.venv\Scripts\Activate.ps1; python .\subscriber.py"
-
 echo Opening publisher terminal...
-start "Publisher" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command ".\.venv\Scripts\Activate.ps1; python .\publisher.py"
+start "Publisher" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command ".\.venv\Scripts\Activate.ps1; python .\01_publisher_01.py"
+
+echo Opening subscriber terminal...
+start "Subscriber" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command ".\.venv\Scripts\Activate.ps1; python .\02_subscriber_01.py"
 
 echo.
 echo MQTT environment started.
