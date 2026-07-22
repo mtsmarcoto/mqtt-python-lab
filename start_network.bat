@@ -22,16 +22,16 @@ echo Opening broker logs...
 start "mqtt-broker" /D "%CD%" powershell.exe -NoExit -Command "$Host.UI.RawUI.WindowTitle = 'mqtt-broker'; docker logs -f mqtt-broker"
 
 echo Opening publisher terminal...
-start "publisher_01" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'publisher_01'; .\.venv\Scripts\Activate.ps1; python .\01_publisher_01.py"
+start "publisher_01" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'publisher_01'; .\.venv\Scripts\Activate.ps1; python .\machines\01_publisher_01.py"
 
 echo Opening subscriber terminal...
-start "subscriber_01" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'subscriber_01'; .\.venv\Scripts\Activate.ps1; python .\02_subscriber_01.py"
+start "subscriber_01" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'subscriber_01'; .\.venv\Scripts\Activate.ps1; python .\machines\02_subscriber_01.py"
 
 echo Opening Inverter terminal...
-start "inverter_01" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'inverter_01'; .\.venv\Scripts\Activate.ps1; python .\03_inverter_01.py"
+start "inverter_01" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'inverter_01'; .\.venv\Scripts\Activate.ps1; python .\machines\03_inverter_01.py"
 
 echo Opening Control Center terminal...
-start "control_center" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'control_center'; .\.venv\Scripts\Activate.ps1; python .\04_control_center.py"
+start "control_center" /D "%CD%" powershell.exe -NoExit -ExecutionPolicy Bypass -Command "$Host.UI.RawUI.WindowTitle = 'control_center'; .\.venv\Scripts\Activate.ps1; python .\machines\04_control_center.py"
 
 
 echo.
